@@ -8,6 +8,14 @@ export async function fetchPatients() {
   return response.json();
 }
 
+export async function searchPatients(query) {
+  const response = await fetch(`${API_URL}?name=${encodeURIComponent(query)}`);
+  if (!response.ok) {
+    throw new Error('Failed to search patients');
+  }
+  return response.json();
+}
+
 export async function fetchPatientById(id) {
   const response = await fetch(`${API_URL}/${id}`);
   if (!response.ok) {

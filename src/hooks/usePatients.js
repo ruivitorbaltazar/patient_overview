@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import { fetchPatients } from '../api/patients';
+import { fetchPatients, searchPatients } from '../api/patients';
 
 export const usePatients = () => {
   const [loading, setLoading] = useState(true);
-  // const [error, setError] = useState(null);
+  const [error, setError] = useState(null);
 
   const [patients, setPatients] = useState([]);
 
@@ -11,27 +11,51 @@ export const usePatients = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
+      setError(null);
       try {
         const data = await fetchPatients();
         setPatients(data);
-      // } catch (err) {
-        // setError(err.message);
+      } catch (err) {
+        setError(err.message);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchData();
-  }, []);
+    if (searchTerm.trim() === '') {
+      fetchData();
+    }
+  }, [searchTerm]);
 
-  const filteredPatients = patients.filter((patient) =>
-    patient.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  useEffect(() => {
+    const fetchSearchResults = async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        if (searchTerm.trim() === '') {
+          const data = await fetchPatients();
+          setPatients(data);
+        } else {
+          const data = await searchPatients(searchTerm);
+          setPatients(data);
+        }
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (searchTerm !== '') {
+      fetchSearchResults();
+    }
+  }, [searchTerm]);
 
   return {
     loading,
-    // error,
-    patients: filteredPatients,
+    error,
+    patients,
     searchTerm,
     setSearchTerm,
   };

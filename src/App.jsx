@@ -4,7 +4,7 @@ import PatientSearch from './components/PatientSearch';
 import Loading from './components/Loading';
 
 export default function App() {
-  const { loading, patients, searchTerm, setSearchTerm } = usePatients();
+  const { loading, error, patients, searchTerm, setSearchTerm } = usePatients();
 
   return (
     <main className="container">
@@ -15,7 +15,7 @@ export default function App() {
       {loading ? (
         <Loading />
       ) : (
-        <PatientList patients={patients} />
+        <PatientList patients={patients} error={error} />
       )}
     </main>
   );
