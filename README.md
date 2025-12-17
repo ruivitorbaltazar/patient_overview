@@ -2,9 +2,11 @@
 # Patient Overview
 
 ## Setup
-- Used Vite to create fast scaffolding
+- run ```npm install``` to install dependencies
+- run ```npm run dev``` to launch the app
 
 ## Features
+- Used Vite to create fast scaffolding
 - Completed required tasks (patient card, api implementation, search, loading/empty/error states)
 - Implemented hooks
 - Added minimal responsive functionality
