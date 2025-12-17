@@ -1,16 +1,19 @@
-# React + Vite
+### Allia Health Group
+# Patient Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Setup
+- Used Vite to create fast scaffolding
 
-Currently, two official plugins are available:
+## Features
+- Completed required tasks (patient card, api implementation, search, loading/empty/error states)
+- Implemented hooks
+- Added minimal responsive functionality
+- Added details page
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Next Steps
+- Finish implementing unit tests (RTL setup with errors)
+- Move to TS for added validations
+- Abstract styles, for increased readability
+- Implement oustanding CRUD actions to details page
+- Implement a state management solution to improve loading times and overall app fluidity
+- Improve overall UI and UX

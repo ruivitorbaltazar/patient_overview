@@ -24,6 +24,8 @@ export async function fetchPatientById(id) {
   return response.json();
 }
 
+// The following functions are commented out for future use.
+
 // export async function createPatient(patientData) {
 //   const response = await fetch(API_URL, {
 //     method: 'POST',
