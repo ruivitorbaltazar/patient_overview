@@ -1,6 +1,6 @@
 :root {
-  --color-primary: #5b2d8b;     /* Allia purple */
-  --color-accent: #3bb273;      /* Allia green */
+  --color-primary: #224447;     /* Allia green 1 */
+  --color-accent: #34959e;      /* Allia green 2 */
   --color-bg: #f6f4f9;          /* light lavender-grey */
   --color-card: #ffffff;
   --color-text: #1f2937;        /* near-black */
@@ -31,6 +31,12 @@ h1 {
   margin-bottom: 1.75rem;
   font-size: 1.75rem;
   color: var(--color-primary);
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--color-accent);
 }
 
 /* Search */
@@ -79,6 +85,21 @@ h1 {
   margin: 0.25rem 0;
   font-size: 0.95rem;
   color: var(--color-muted);
+}
+
+.patient-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.patient-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-accent);
 }
 
 /* States */

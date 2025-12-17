@@ -8,6 +8,7 @@ export default function App() {
 
   return (
     <main className="container">
+      <h3>Allia Health Group</h3>
       <h1>Patient Overview</h1>
 
       <PatientSearch value={searchTerm} onChange={setSearchTerm} />
