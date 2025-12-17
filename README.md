@@ -1,5 +1,6 @@
 ### Allia Health Group
 # Patient Overview
+Small “Patient Overview” UI in React.JS
 
 ## Setup
 - run ```npm install``` to install dependencies
