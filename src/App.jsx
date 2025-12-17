@@ -1,23 +1,12 @@
-import { usePatients } from './hooks/usePatients';
-import PatientList from './components/PatientList';
-import PatientSearch from './components/PatientSearch';
-import Loading from './components/Loading';
+import { Routes, Route } from 'react-router-dom';
+import PatientOverview from './pages/PatientOverview';
+import PatientDetails from './pages/PatientDetails';
 
 export default function App() {
-  const { loading, error, patients, searchTerm, setSearchTerm } = usePatients();
-
   return (
-    <main className="container">
-      <h3>Allia Health Group</h3>
-      <h1>Patient Overview</h1>
-
-      <PatientSearch value={searchTerm} onChange={setSearchTerm} />
-
-      {loading ? (
-        <Loading />
-      ) : (
-        <PatientList patients={patients} error={error} />
-      )}
-    </main>
+    <Routes>
+      <Route path="/" element={<PatientOverview />} />
+      <Route path="/patients/:id" element={<PatientDetails />} />
+    </Routes>
   );
 }

@@ -102,6 +102,63 @@ h3 {
   border: 2px solid var(--color-accent);
 }
 
+.patient-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.patient-link:hover .patient-card {
+  transform: translateY(-2px);
+  transition: transform 0.15s ease;
+}
+
+/* Patient details */
+
+.patient-details-card {
+  max-width: 480px;
+  background-color: var(--color-card);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.patient-details-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.patient-details-name {
+  margin: 0 0 0.5rem;
+  color: var(--color-primary);
+}
+
+.patient-details-meta {
+  margin: 0.25rem 0;
+  color: var(--color-muted);
+}
+
+/* Back button */
+
+.back-button {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  background-color: rgba(91, 45, 139, 0.08); /* soft purple */
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: rgba(91, 45, 139, 0.15);
+}
+
 /* States */
 
 .loading-state,
